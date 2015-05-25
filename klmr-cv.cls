@@ -22,9 +22,12 @@
     \begingroup%
     \centering%
     {\Huge\textsf\@author}%
-    \\
-    \href{http://\@website}{\@website}\\
-    \href{mailto:\@email}{\@email}
+    \\[0.5\baselineskip]
+    {%
+        \small
+        \href{http://\@website}{\@website}\\
+        \href{mailto:\@email}{\@email}
+    }
 
     \global\let\maketitle\relax%
     \endgroup%
@@ -33,22 +36,26 @@
 \titleformat\section
     {}% Format
     {{%
-        \bfseries%
-        \large%
+        \Large%
         \addfontfeature{LetterSpace=10}%
         \MakeTextUppercase{#1}%
     }}% Label
     {0pt}% Sep
     {}% Before-code
 
+\titlespacing\section{0pt}{0pt}{0pt}
+
 \titleformat\subsection
     {}% Format
     {{%
-        \addfontfeature{LetterSpace=10}%
+        \bfseries%
+        \addfontfeature{LetterSpace=3}%
         \MakeTextUppercase{#1}%
     }}% Label
     {0pt}% Sep
     {}% Before-code
+
+\titlespacing\subsection{0pt}{0pt}{0pt}
 
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
