@@ -9,6 +9,8 @@
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
 \RequirePackage{polyglossia}
+\RequirePackage[explicit]{titlesec}
+\RequirePackage{textcase}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -27,11 +29,25 @@
     \endgroup%
 }
 
-\renewcommand\thesection{}
-\renewcommand\thesubsection{}
-\def\@seccntformat#1{\csname #1ignore\expandafter\endcsname\csname the#1\endcsname\quad}
-\let\sectionignore\@gobbletwo
-\let\subsectionignore\@gobbletwo
+\titleformat\section
+    {}% Format
+    {{%
+        \bfseries%
+        \large%
+        \addfontfeature{LetterSpace=10}%
+        \MakeTextUppercase{#1}%
+    }}% Label
+    {0pt}% Sep
+    {}% Before-code
+
+\titleformat\subsection
+    {}% Format
+    {{%
+        \addfontfeature{LetterSpace=10}%
+        \MakeTextUppercase{#1}%
+    }}% Label
+    {0pt}% Sep
+    {}% Before-code
 
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
