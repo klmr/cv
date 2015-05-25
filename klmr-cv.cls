@@ -36,6 +36,7 @@
 \titleformat\section
     {}% Format
     {{%
+        \sffamily%
         \Large%
         \addfontfeature{LetterSpace=10}%
         \MakeTextUppercase{#1}%
