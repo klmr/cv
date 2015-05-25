@@ -8,6 +8,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
+\RequirePackage{geometry}
 \RequirePackage{polyglossia}
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{textcase}
@@ -55,6 +56,8 @@
 \newcommand*\type[1]{\textbf{#1}}
 
 \setmainlanguage[variant=uk]{english}
+
+\geometry{a4paper, vmargin=0.75cm, hmargin=1.25cm}
 
 \defaultfontfeatures{Mapping=tex-text}
 
