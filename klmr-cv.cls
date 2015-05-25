@@ -69,6 +69,12 @@
 
 \AtEndDocument{\vfill\end{minipage}}
 
+\let\cv@enditemize\enditemize
+\renewcommand*\enditemize{\cv@enditemize\vspace{\baselineskip}}
+
+\let\cv@endenumerate\endenumerate
+\renewcommand*\endenumerate{\cv@endenumerate\vspace{\baselineskip}}
+
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
 \renewcommand*\item[1]{#1\\}
