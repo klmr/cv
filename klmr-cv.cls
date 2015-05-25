@@ -32,10 +32,26 @@
 \let\sectionignore\@gobbletwo
 \let\subsectionignore\@gobbletwo
 
-\renewcommand*\date[1]{\noindent #1}
+\renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
 \renewcommand*\item[1]{#1\\}
 \newcommand*\type[1]{\textbf{#1}}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont[
+    UprightFont={* Light},
+    BoldFont={*},
+    ItalicFont={* Light Italic},
+    BoldItalicFont={* Italic},
+]{Helvetica Neue}
+
+\setsansfont[
+    UprightFont={* UltraLight},
+    BoldFont={* Light},
+    ItalicFont={* UltraLight Italic},
+    BoldItalicFont={* Light Italic},
+]{Helvetica Neue}
 
 % vim:ft=tex
 \endinput
