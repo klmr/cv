@@ -12,6 +12,7 @@
 \RequirePackage{polyglossia}
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{textcase}
+\RequirePackage{enumitem}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -58,6 +59,10 @@
 
 \titlespacing*\subsection{0pt}{0pt}{0pt}
 
+\newenvironment{sidebar}
+    {\begin{minipage}{0.3\textwidth}}
+    {\end{minipage}}
+
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
 \renewcommand*\item[1]{#1\\}
@@ -65,7 +70,7 @@
 
 \setmainlanguage[variant=uk]{english}
 
-\geometry{a4paper, vmargin=0.75cm, hmargin=1.25cm}
+\geometry{a4paper, vmargin=0.75cm, hmargin=1cm}
 
 \defaultfontfeatures{Mapping=tex-text}
 
@@ -82,6 +87,8 @@
     ItalicFont={* UltraLight Italic},
     BoldItalicFont={* Light Italic},
 ]{Helvetica Neue}
+
+\setlist{nosep, leftmargin=*}
 
 % vim:ft=tex
 \endinput
