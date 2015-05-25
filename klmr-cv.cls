@@ -8,6 +8,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
+\RequirePackage{polyglossia}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -36,6 +37,8 @@
 \let\listitem\item
 \renewcommand*\item[1]{#1\\}
 \newcommand*\type[1]{\textbf{#1}}
+
+\setmainlanguage[variant=uk]{english}
 
 \defaultfontfeatures{Mapping=tex-text}
 
