@@ -43,7 +43,7 @@
     {0pt}% Sep
     {}% Before-code
 
-\titlespacing\section{0pt}{0pt}{0pt}
+\titlespacing*\section{0pt}{0pt}{0pt}
 
 \titleformat\subsection
     {}% Format
@@ -55,7 +55,7 @@
     {0pt}% Sep
     {}% Before-code
 
-\titlespacing\subsection{0pt}{0pt}{0pt}
+\titlespacing*\subsection{0pt}{0pt}{0pt}
 
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
