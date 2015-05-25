@@ -60,12 +60,12 @@
 
 \titlespacing*\subsection{0pt}{0pt}{0pt}
 
-\newcommand*\sidebar{\noindent\begin{minipage}[t][][t]{0.25\textwidth}}
+\newcommand*\sidebar{\noindent\begin{minipage}[t][][t]{0.3\textwidth}}
 
 \newcommand*\body{%
     \end{minipage}%
     \hfill%
-    \begin{minipage}[t][][t]{0.7\textwidth}}
+    \begin{minipage}[t][][t]{0.66\textwidth}}
 
 \AtEndDocument{\vfill\end{minipage}}
 
