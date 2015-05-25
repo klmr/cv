@@ -26,12 +26,13 @@
     \\[0.5\baselineskip]
     {%
         \small
-        \href{http://\@website}{\@website}\\
+        \href{http://\@website}{\@website} ·
         \href{mailto:\@email}{\@email}
     }
 
-    \global\let\maketitle\relax%
+    \vspace{\baselineskip}
     \endgroup%
+    \global\let\maketitle\relax%
 }
 
 \titleformat\section
