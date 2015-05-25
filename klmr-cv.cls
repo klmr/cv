@@ -59,9 +59,14 @@
 
 \titlespacing*\subsection{0pt}{0pt}{0pt}
 
-\newenvironment{sidebar}
-    {\begin{minipage}{0.3\textwidth}}
-    {\end{minipage}}
+\newcommand*\sidebar{\noindent\begin{minipage}[t][][t]{0.25\textwidth}}
+
+\newcommand*\body{%
+    \end{minipage}%
+    \hfill%
+    \begin{minipage}[t][][t]{0.7\textwidth}}
+
+\AtEndDocument{\vfill\end{minipage}}
 
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
