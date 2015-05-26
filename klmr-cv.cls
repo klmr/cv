@@ -1,7 +1,7 @@
 \ProvidesClass{klmr-cv}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass{scrartcl}
+\LoadClass[fontsize=10pt]{scrartcl}
 
 \RequirePackage{fixltx2e}
 \RequirePackage{xltxtra}
@@ -20,18 +20,16 @@
 \renewcommand*\maketitle{%
     \clearpage%
     \pagestyle{empty}%
-    \begingroup%
-    \centering%
-    {\Huge\textsf\@author}%
-    \\[0.5\baselineskip]
-    {%
-        \small
-        \href{http://\@website}{\@website} ·
-        \href{mailto:\@email}{\@email}
-    }
-
-    \vspace{\baselineskip}
-    \endgroup%
+    \begin{minipage}[][3cm][c]{\textwidth}
+        \centering%
+        {\Huge\textsf\@author}%
+        \\[0.5\baselineskip]
+        {%
+            \small
+            \href{http://\@website}{\@website} ·
+            \href{mailto:\@email}{\@email}
+        }
+    \end{minipage}%
     \global\let\maketitle\relax%
 }
 
@@ -46,7 +44,7 @@
     {0pt}% Sep
     {}% Before-code
 
-\titlespacing*\section{0pt}{0pt}{0pt}
+\titlespacing*\section{0pt}{\baselineskip}{0.5\baselineskip}
 
 \titleformat\subsection
     {}% Format
