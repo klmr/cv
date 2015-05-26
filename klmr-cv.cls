@@ -68,10 +68,10 @@
 \AtEndDocument{\vfill\end{minipage}}
 
 \let\cv@enditemize\enditemize
-\renewcommand*\enditemize{\cv@enditemize\vspace{\baselineskip}}
+\renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
 
 \let\cv@endenumerate\endenumerate
-\renewcommand*\endenumerate{\cv@endenumerate\vspace{\baselineskip}}
+\renewcommand*\endenumerate{\cv@endenumerate\vspace{0pt plus 1\baselineskip}}
 
 \renewcommand*\date[1]{\noindent #1 |}
 \let\listitem\item
