@@ -73,7 +73,7 @@
 \let\cv@endenumerate\endenumerate
 \renewcommand*\endenumerate{\cv@endenumerate\vspace{0pt plus 1\baselineskip}}
 
-\renewcommand*\date[1]{\noindent #1 |}
+\renewcommand*\date[1]{\noindent #1\mbox{ }|}
 \let\listitem\item
 \renewcommand*\item[1]{#1\\}
 \newcommand*\type[1]{\textbf{#1}}
