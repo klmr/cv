@@ -35,26 +35,26 @@
 
 \titleformat\section
     {}% Format
+    {}% Label
+    {0pt}% Sep
     {{%
         \sffamily%
         \Large%
         \addfontfeature{LetterSpace=10}%
         \MakeTextUppercase{#1}%
-    }}% Label
-    {0pt}% Sep
-    {}% Before-code
+    }}% Before-code
 
 \titlespacing*\section{0pt}{\baselineskip}{0.5\baselineskip}
 
 \titleformat\subsection
     {}% Format
+    {}% Label
+    {0pt}% Sep
     {{%
         \bfseries%
         \addfontfeature{LetterSpace=3}%
         \MakeTextUppercase{#1}%
-    }}% Label
-    {0pt}% Sep
-    {}% Before-code
+    }}% Before-code
 
 \titlespacing*\subsection{0pt}{0pt}{0pt}
 
