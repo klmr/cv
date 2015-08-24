@@ -18,6 +18,15 @@ ${target}.pdf: ${includes}
 preview:
 	${LATEXMK} -pvc ${target}
 
+.PHONY: thumbnail
+thumbnail: thumbnail.png
+
+thumbnail.png: ${target}.pdf
+	convert -density 300 -format png -thumbnail 500 -flatten $< \
+		-background black \( +clone -shadow 60x2+2+2 \) +swap \
+		-background none -flatten \
+		$@
+
 # Cleanup
 
 .PHONY: cleancache
@@ -33,3 +42,4 @@ clean: cleancache
 .PHONY: cleanall
 cleanall: clean
 	${RM} ${target}.pdf
+	${RM} thumbnail.png
