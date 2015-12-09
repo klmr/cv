@@ -4,6 +4,8 @@ LATEXMK := latexmk -pdf -dvi- -ps- -r ${fullpath}/.latexmkrc
 target := klmr-cv
 includes := $(shell ls *.{tex,cls})
 
+all: ${target} thumbnail
+
 .PHONY: ${target}
 ${target}: ${target}.pdf
 
