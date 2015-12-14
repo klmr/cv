@@ -98,6 +98,9 @@
     BoldItalicFont={* Light Italic},
 ]{Helvetica Neue}
 
+\let\old@amp\&
+\renewcommand*\&{{\fontspec{Yanone Kaffeesatz Thin}\old@amp}}
+
 \setlist{nosep, leftmargin=*}
 
 % vim:ft=tex
