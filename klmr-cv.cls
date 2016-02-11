@@ -1,7 +1,7 @@
 \ProvidesClass{klmr-cv}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[fontsize=10pt]{scrartcl}
+\LoadClass[fontsize=10pt, paper=a4]{scrartcl}
 
 \RequirePackage{fixltx2e}
 \RequirePackage{xltxtra}
