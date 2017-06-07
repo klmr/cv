@@ -6,6 +6,7 @@
 \RequirePackage{fixltx2e}
 \RequirePackage{xltxtra}
 \RequirePackage{etoolbox}
+\RequirePackage{array}
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
 \RequirePackage{geometry}
@@ -77,6 +78,15 @@
 \let\listitem\item
 \renewcommand*\item[1]{#1\\}
 \newcommand*\type[1]{\textbf{#1}}
+
+\newcommand\workitem[5]{%
+    \begin{minipage}{\textwidth}
+        \begin{tabular}{@{}p{1.75cm}@{}p{1.46cm}@{ }l@{ }p{9cm}@{}}
+            \raggedleft \mbox{#1{\kern0.08em}}--{\kern0.08em} & #2 & | &
+                \textbf{#3}\ifstrempty{#3}{}{: }#4 \\
+            \ifstrempty{#5}{}{ &  &   & #5 \\}
+        \end{tabular}
+    \end{minipage}}
 
 \setmainlanguage[variant=uk]{english}
 
