@@ -80,13 +80,11 @@
 \newcommand*\type[1]{\textbf{#1}}
 
 \newcommand\workitem[5]{%
-    \begin{minipage}{\textwidth}
-        \begin{tabular}{@{}p{1.75cm}@{}p{1.46cm}@{ }l@{ }p{9cm}@{}}
-            \raggedleft \mbox{#1{\kern0.08em}}--{\kern0.08em} & #2 & | &
-                \textbf{#3}\ifstrempty{#3}{}{: }#4 \\
-            \ifstrempty{#5}{}{ &  &   & #5 \\}
-        \end{tabular}
-    \end{minipage}}
+    \par
+    \textbf{#3}\hfill {\footnotesize #1--#2}\\
+    #4
+    \ifstrempty{#5}{}{\\{\mbox{\quad}\small #5}}
+    \\[-0.6\baselineskip]}
 
 \setmainlanguage[variant=uk]{english}
 
