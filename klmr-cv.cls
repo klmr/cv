@@ -94,9 +94,9 @@
 
 \setmainfont[
     UprightFont={* Light},
-    BoldFont={*},
+    BoldFont={* Medium},
     ItalicFont={* Light Italic},
-    BoldItalicFont={* Italic},
+    BoldItalicFont={* Medium Italic},
 ]{Helvetica Neue}
 
 \setsansfont[
