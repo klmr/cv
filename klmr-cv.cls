@@ -14,6 +14,7 @@
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{textcase}
 \RequirePackage{enumitem}
+\RequirePackage{environ}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -59,16 +60,11 @@
 
 \titlespacing*\subsection{0pt}{0.25\baselineskip}{0pt}
 
-\newcommand*\sidebar{\noindent\begin{minipage}[t][][t]{0.3\textwidth}}
 \renewcommand*\date[1]{\hfill{\rmfamily\normalfont\footnotesize#1}}
 
-\newcommand*\body{%
-    \end{minipage}%
-    \hfill%
-    \begin{minipage}[t][][t]{0.66\textwidth}}
 \newcommand*\entry[1]{\par\noindent{#1}}
 
-\AtEndDocument{\vfill\end{minipage}}
+\NewEnviron{sidebar}{\reversemarginpar\marginpar{\BODY}}
 
 \let\cv@enditemize\enditemize
 \renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
