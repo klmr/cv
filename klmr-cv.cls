@@ -64,7 +64,24 @@
 
 \newcommand*\entry[1]{\par\noindent{#1}}
 
-\NewEnviron{sidebar}{\reversemarginpar\marginpar{\BODY}}
+\newcommand\details[1]{%
+    \par%
+    \noindent%
+    \hfill%
+    \begin{minipage}{\dimexpr\textwidth-1ex}
+        \small#1
+    \end{minipage}}
+
+\NewEnviron{sidebar}{%
+    \renewcommand\details[1]{%
+        \par%
+        \noindent%
+        \hfill%
+        \begin{minipage}{\dimexpr\marginparwidth-1ex}
+            \small##1
+        \end{minipage}}
+    \reversemarginpar%
+    \marginpar{\BODY}}
 
 \let\cv@enditemize\enditemize
 \renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
