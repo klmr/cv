@@ -57,14 +57,16 @@
         \MakeTextUppercase{#1}%
     }}% Before-code
 
-\titlespacing*\subsection{0pt}{0pt}{0pt}
+\titlespacing*\subsection{0pt}{0.25\baselineskip}{0pt}
 
 \newcommand*\sidebar{\noindent\begin{minipage}[t][][t]{0.3\textwidth}}
+\renewcommand*\date[1]{\hfill{\rmfamily\normalfont\footnotesize#1}}
 
 \newcommand*\body{%
     \end{minipage}%
     \hfill%
     \begin{minipage}[t][][t]{0.66\textwidth}}
+\newcommand*\entry[1]{\par\noindent{#1}}
 
 \AtEndDocument{\vfill\end{minipage}}
 
@@ -73,11 +75,6 @@
 
 \let\cv@endenumerate\endenumerate
 \renewcommand*\endenumerate{\cv@endenumerate\vspace{0pt plus 1\baselineskip}}
-
-\renewcommand*\date[1]{\noindent #1\mbox{ }|\mbox{ }\ignorespaces}
-\let\listitem\item
-\renewcommand*\item[1]{#1\\}
-\newcommand*\type[1]{\textbf{#1}}
 
 \newcommand\workitem[5]{%
     \par
@@ -88,7 +85,8 @@
 
 \setmainlanguage[variant=uk]{english}
 
-\geometry{a4paper, vmargin=0.75cm, hmargin=1cm}
+\geometry{a4paper, vmargin=0.75cm, left=7.5cm, right=0.75cm, marginparwidth=6cm,
+marginparsep=0.75cm}
 
 \defaultfontfeatures{Mapping=tex-text}
 
