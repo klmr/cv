@@ -48,6 +48,11 @@
 
 \titlespacing*\section{0pt}{\baselineskip}{0.5\baselineskip}
 
+% This workaround is necessary to avoid dates in subsection titles being typeset
+% in all uppercase; using `\NoCaseChange` inside the macros unfortunately
+% doesn’t work, so we just make everything before the (optional) date uppercase.
+\def\klmr@title@ucase#1\date{\MakeTextUppercase{#1}\date}
+
 \titleformat\subsection
     {}% Format
     {}% Label
@@ -55,12 +60,16 @@
     {{%
         \bfseries%
         \addfontfeature{LetterSpace=3}%
-        \MakeTextUppercase{#1}%
+        % Since the date is optional, we need to add it here as a guard.
+        \klmr@title@ucase#1\date{}
     }}% Before-code
 
 \titlespacing*\subsection{0pt}{0.25\baselineskip}{0pt}
 
-\renewcommand*\date[1]{\hfill{\rmfamily\normalfont\footnotesize#1}}
+\renewcommand*\date[1]{%
+    % The test is necessary to prevent formatting errors in section titles,
+    % where two `\date`s may occur; see above.
+    \ifstrempty{#1}{}{\hfill{\rmfamily\normalfont\footnotesize#1}}}
 
 \newcommand*\entry[1]{\par\noindent{#1}}
 
