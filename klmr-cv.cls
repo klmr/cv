@@ -73,6 +73,8 @@
 
 \newcommand*\entry[1]{\par\noindent{#1}}
 
+\newenvironment{minilist}{\def\item{\def\item{· }}}{}
+
 \newcommand\details[1]{%
     \par%
     \noindent%
