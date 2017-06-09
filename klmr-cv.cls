@@ -68,7 +68,7 @@
     \par%
     \noindent%
     \hfill%
-    \begin{minipage}{\dimexpr\textwidth-1ex}
+    \begin{minipage}[t]{\dimexpr\textwidth-1ex}
         \small#1
     \end{minipage}}
 
@@ -77,7 +77,7 @@
         \par%
         \noindent%
         \hfill%
-        \begin{minipage}{\dimexpr\marginparwidth-1ex}
+        \begin{minipage}[t]{\dimexpr\marginparwidth-1ex}
             \small##1
         \end{minipage}}
     \reversemarginpar%
