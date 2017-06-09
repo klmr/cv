@@ -6,6 +6,7 @@
 \RequirePackage{fixltx2e}
 \RequirePackage{xltxtra}
 \RequirePackage{etoolbox}
+\RequirePackage{array}
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
 \RequirePackage{geometry}
@@ -78,6 +79,13 @@
 \renewcommand*\item[1]{#1\\}
 \newcommand*\type[1]{\textbf{#1}}
 
+\newcommand\workitem[5]{%
+    \par
+    \textbf{#3}\hfill {\footnotesize #1--#2}\\
+    #4
+    \ifstrempty{#5}{}{\\{\mbox{\quad}\small #5}}
+    \\[-0.6\baselineskip]}
+
 \setmainlanguage[variant=uk]{english}
 
 \geometry{a4paper, vmargin=0.75cm, hmargin=1cm}
@@ -86,9 +94,9 @@
 
 \setmainfont[
     UprightFont={* Light},
-    BoldFont={*},
+    BoldFont={* Medium},
     ItalicFont={* Light Italic},
-    BoldItalicFont={* Italic},
+    BoldItalicFont={* Medium Italic},
 ]{Helvetica Neue}
 
 \setsansfont[
