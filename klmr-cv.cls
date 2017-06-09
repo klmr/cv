@@ -22,7 +22,8 @@
 \renewcommand*\maketitle{%
     \clearpage%
     \pagestyle{empty}%
-    \begin{minipage}[][3cm][c]{\textwidth}
+    \hspace{\dimexpr-\marginparwidth-\marginparsep}
+    \begin{minipage}[][3cm][c]{\dimexpr\textwidth+\marginparwidth+\marginparsep}
         \centering%
         {\Huge\textsf\@author}%
         \\[0.5\baselineskip]
