@@ -67,6 +67,8 @@
 
 \titlespacing*\subsection{0pt}{0.25\baselineskip}{0pt}
 
+\renewcommand*\subsubsection[1]{\textit{#1}}
+
 \renewcommand*\date[1]{%
     % The test is necessary to prevent formatting errors in section titles,
     % where two `\date`s may occur; see above.
