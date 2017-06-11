@@ -69,6 +69,8 @@
 
 \renewcommand*\subsubsection[1]{\textit{#1}}
 
+\newcommand*\myself[1]{\textit{#1}}
+
 \renewcommand*\date[1]{%
     % The test is necessary to prevent formatting errors in section titles,
     % where two `\date`s may occur; see above.
