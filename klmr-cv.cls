@@ -93,7 +93,13 @@
             \small##1
         \end{minipage}}
     \reversemarginpar%
-    \marginpar{\BODY}}
+    \marginpar{%
+        % Vertical spacing before sidebar equivalent to height title;
+        % Although I don’t know why the multiplier 0.75 is needed here: a full
+        % baselineskip should work, but is too low.
+        {\Huge\vspace{1.5\baselineskip}}%
+        {\small\vspace{0.75\baselineskip}}%
+        \BODY}}
 
 \let\cv@enditemize\enditemize
 \renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
