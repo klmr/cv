@@ -107,13 +107,6 @@
 \let\cv@endenumerate\endenumerate
 \renewcommand*\endenumerate{\cv@endenumerate\vspace{0pt plus 1\baselineskip}}
 
-\newcommand\workitem[5]{%
-    \par
-    \textbf{#3}\hfill {\footnotesize #1--#2}\\
-    #4
-    \ifstrempty{#5}{}{\\{\mbox{\quad}\small #5}}
-    \\[-0.6\baselineskip]}
-
 \setmainlanguage[variant=uk]{english}
 
 \geometry{a4paper, vmargin=0.75cm, left=7.5cm, right=0.75cm, marginparwidth=6cm,
