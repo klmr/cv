@@ -62,7 +62,7 @@
         \bfseries%
         \addfontfeature{LetterSpace=3}%
         % Since the date is optional, we need to add it here as a guard.
-        \klmr@title@ucase#1\date{}
+        \klmr@title@ucase#1\date{}%
     }}% Before-code
 
 \titlespacing*\subsection{0pt}{0.25\baselineskip}{0pt}
