@@ -14,6 +14,7 @@
 \RequirePackage[explicit]{titlesec}
 \RequirePackage{textcase}
 \RequirePackage{enumitem}
+\RequirePackage{environ}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -21,7 +22,8 @@
 \renewcommand*\maketitle{%
     \clearpage%
     \pagestyle{empty}%
-    \begin{minipage}[][3cm][c]{\textwidth}
+    \hspace{\dimexpr-\marginparwidth-\marginparsep}
+    \begin{minipage}[][3cm][c]{\dimexpr\textwidth+\marginparwidth+\marginparsep}
         \centering%
         {\Huge\textsf\@author}%
         \\[0.5\baselineskip]
@@ -47,6 +49,11 @@
 
 \titlespacing*\section{0pt}{\baselineskip}{0.5\baselineskip}
 
+% This workaround is necessary to avoid dates in subsection titles being typeset
+% in all uppercase; using `\NoCaseChange` inside the macros unfortunately
+% doesn’t work, so we just make everything before the (optional) date uppercase.
+\def\klmr@title@ucase#1\date{\MakeTextUppercase{#1}\date}
+
 \titleformat\subsection
     {}% Format
     {}% Label
@@ -54,30 +61,51 @@
     {{%
         \bfseries%
         \addfontfeature{LetterSpace=3}%
-        \MakeTextUppercase{#1}%
+        % Since the date is optional, we need to add it here as a guard.
+        \klmr@title@ucase#1\date{}%
     }}% Before-code
 
-\titlespacing*\subsection{0pt}{0pt}{0pt}
+\titlespacing*\subsection{0pt}{0.25\baselineskip}{0pt}
 
-\newcommand*\sidebar{\noindent\begin{minipage}[t][][t]{0.3\textwidth}}
+\renewcommand*\date[1]{%
+    % The test is necessary to prevent formatting errors in section titles,
+    % where two `\date`s may occur; see above.
+    \ifstrempty{#1}{}{\hfill{\rmfamily\normalfont\footnotesize#1}}}
 
-\newcommand*\body{%
-    \end{minipage}%
+\newcommand*\entry[1]{\par\noindent{#1}}
+
+\newenvironment{minilist}{\def\item{\def\item{· }}}{}
+
+\newcommand\details[1]{%
+    \par%
+    \noindent%
     \hfill%
-    \begin{minipage}[t][][t]{0.66\textwidth}}
+    \begin{minipage}[t]{\dimexpr\textwidth-1ex}
+        \small#1
+    \end{minipage}}
 
-\AtEndDocument{\vfill\end{minipage}}
+\NewEnviron{sidebar}{%
+    \renewcommand\details[1]{%
+        \par%
+        \noindent%
+        \hfill%
+        \begin{minipage}[t]{\dimexpr\marginparwidth-1ex}
+            \small##1
+        \end{minipage}}
+    \reversemarginpar%
+    \marginpar{%
+        % Vertical spacing before sidebar equivalent to height title;
+        % Although I don’t know why the multiplier 0.75 is needed here: a full
+        % baselineskip should work, but is too low.
+        {\Huge\vspace{1.5\baselineskip}}%
+        {\small\vspace{0.75\baselineskip}}%
+        \BODY}}
 
 \let\cv@enditemize\enditemize
 \renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
 
 \let\cv@endenumerate\endenumerate
 \renewcommand*\endenumerate{\cv@endenumerate\vspace{0pt plus 1\baselineskip}}
-
-\renewcommand*\date[1]{\noindent #1\mbox{ }|\mbox{ }\ignorespaces}
-\let\listitem\item
-\renewcommand*\item[1]{#1\\}
-\newcommand*\type[1]{\textbf{#1}}
 
 \newcommand\workitem[5]{%
     \par
@@ -88,7 +116,8 @@
 
 \setmainlanguage[variant=uk]{english}
 
-\geometry{a4paper, vmargin=0.75cm, hmargin=1cm}
+\geometry{a4paper, vmargin=0.75cm, left=7.5cm, right=0.75cm, marginparwidth=6cm,
+marginparsep=0.75cm}
 
 \defaultfontfeatures{Mapping=tex-text}
 
