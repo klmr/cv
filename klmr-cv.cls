@@ -88,6 +88,14 @@
         \small#1
     \end{minipage}}
 
+\NewEnviron{bibiography}{%
+    \begingroup
+    \setlength\parindent{-1ex}
+    \setlength\parskip{0.5ex}
+    \renewcommand*\bibitem[5]{\par ##1. “##2.” \textit{##3}, ##4, ##5.}
+    \BODY
+    \endgroup}
+
 \NewEnviron{sidebar}{%
     \renewcommand\details[1]{%
         \par%
