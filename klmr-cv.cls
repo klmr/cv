@@ -15,6 +15,7 @@
 \RequirePackage{textcase}
 \RequirePackage{enumitem}
 \RequirePackage{environ}
+\RequirePackage{microtype}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
