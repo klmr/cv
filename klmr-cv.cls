@@ -98,7 +98,7 @@
     \begingroup
     \setlength\parindent{-1ex}
     \setlength\parskip{0.5ex}
-    \renewcommand*\bibitem[5]{\par ##1. “##2.” \textit{##3}, ##4, ##5.}
+    \renewcommand*\bibitem[5]{\par ##1\unskip. “##2.” \textit{##3}, ##4, ##5.}
     \BODY
     \endgroup}
 
