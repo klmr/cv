@@ -97,10 +97,11 @@
     \noindent%
     \hfill%
     \begin{minipage}[t]{\dimexpr#1-1ex}
+        \par
         #2%
     \end{minipage}}
 
-\newcommand\klmr@details[2]{\klmr@indentblock{#1}{\textcolor[HTML]{666666}{{\small#2}}}}
+\newcommand\klmr@details[2]{\klmr@indentblock{#1}{\leavevmode\color[HTML]{666666}{\small#2}}}
 
 \newcommand\details[1]{\klmr@details{\textwidth}{#1}}
 
