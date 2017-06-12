@@ -80,9 +80,11 @@
 
 \newcommand*\entry[1]{%
     \begingroup
+    \par%
     \setlength\parindent{0ex}
     \setlength\hangindent{1ex}
-    \par#1%
+    #1%
+    \par
     \endgroup}
 
 \newenvironment{minilist}{\def\item{\def\item{· }}}{}
