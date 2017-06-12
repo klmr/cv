@@ -107,10 +107,12 @@
     \reversemarginpar%
     \marginpar{%
         % Vertical spacing before sidebar equivalent to height title;
-        % Although I don’t know why the multiplier 0.75 is needed here: a full
-        % baselineskip should work, but is too low.
-        {\Huge\vspace{1.5\baselineskip}}%
-        {\small\vspace{0.75\baselineskip}}%
+        % Although I don’t know why the additional space at the end is  needed
+        % here: everything is slightly off, so I’m adding it to compensate.
+        {\Huge\sffamily\vspace{\baselineskip}}%
+        \vspace{1.5\baselineskip}%
+        {\small\vspace{\baselineskip}}%
+        {\vspace{0.5\baselineskip}}%
         \BODY}}
 
 \let\cv@enditemize\enditemize
