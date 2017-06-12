@@ -76,7 +76,12 @@
     % where two `\date`s may occur; see above.
     \ifstrempty{#1}{}{\hfill{\rmfamily\normalfont\footnotesize#1}}}
 
-\newcommand*\entry[1]{\par\noindent{#1}}
+\newcommand*\entry[1]{%
+    \begingroup
+    \setlength\parindent{0ex}
+    \setlength\hangindent{1ex}
+    \par#1%
+    \endgroup}
 
 \newenvironment{minilist}{\def\item{\def\item{· }}}{}
 
