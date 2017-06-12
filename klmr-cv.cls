@@ -16,6 +16,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{environ}
 \RequirePackage{microtype}
+\RequirePackage{xcolor}
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
@@ -94,7 +95,7 @@
         #2%
     \end{minipage}}
 
-\newcommand\klmr@details[2]{\klmr@indentblock{#1}{{\small#2}}}
+\newcommand\klmr@details[2]{\klmr@indentblock{#1}{\textcolor[HTML]{666666}{{\small#2}}}}
 
 \newcommand\details[1]{\klmr@details{\textwidth}{#1}}
 
