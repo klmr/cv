@@ -26,12 +26,12 @@
     \begin{minipage}[][3cm][c]{\dimexpr\textwidth+\marginparwidth+\marginparsep}
         \centering%
         {\Huge\textsf\@author}%
-        \\[0.5\baselineskip]
+        \\[0.5\baselineskip]%
         {%
             \small
             \href{http://\@website}{\@website} ·
-            \href{mailto:\@email}{\@email}
-        }
+            \href{mailto:\@email}{\@email}%
+        }%
     \end{minipage}%
     \global\let\maketitle\relax%
 }
