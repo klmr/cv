@@ -86,30 +86,30 @@
 
 \newenvironment{minilist}{\def\item{\def\item{· }}}{}
 
-\newcommand\details[1]{%
+\newcommand\klmr@indentblock[2]{%
     \par%
     \noindent%
     \hfill%
-    \begin{minipage}[t]{\dimexpr\textwidth-1ex}
-        \small#1
+    \begin{minipage}[t]{\dimexpr#1-1ex}
+        #2%
     \end{minipage}}
+
+\newcommand\klmr@details[2]{\klmr@indentblock{#1}{{\small#2}}}
+
+\newcommand\details[1]{\klmr@details{\textwidth}{#1}}
 
 \RenewEnviron{bibliography}{%
     \begingroup
-    \setlength\parindent{-1ex}
-    \setlength\parskip{0.5ex}
-    \renewcommand*\bibitem[5]{\par ##1\unskip. “##2.” \textit{##3}, ##4, ##5.}
+    \renewcommand*\bibitem[5]{%
+        \klmr@indentblock{\textwidth}{%
+            \setlength\parindent{-1ex}
+            \setlength\parskip{0.5ex}
+            \small##1\unskip. “##2.” \textit{##3}, ##4, ##5.}}
     \BODY
     \endgroup}
 
 \NewEnviron{sidebar}{%
-    \renewcommand\details[1]{%
-        \par%
-        \noindent%
-        \hfill%
-        \begin{minipage}[t]{\dimexpr\marginparwidth-1ex}
-            \small##1
-        \end{minipage}}
+    \renewcommand\details[1]{\klmr@details{\marginparwidth}{##1}}
     \reversemarginpar%
     \marginpar{%
         % Vertical spacing before sidebar equivalent to height title;
