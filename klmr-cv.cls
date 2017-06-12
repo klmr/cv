@@ -94,7 +94,7 @@
         \small#1
     \end{minipage}}
 
-\NewEnviron{bibiography}{%
+\RenewEnviron{bibliography}{%
     \begingroup
     \setlength\parindent{-1ex}
     \setlength\parskip{0.5ex}
