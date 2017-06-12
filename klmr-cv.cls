@@ -98,16 +98,6 @@
 
 \newcommand\details[1]{\klmr@details{\textwidth}{#1}}
 
-\RenewEnviron{bibliography}{%
-    \begingroup
-    \renewcommand*\bibitem[5]{%
-        \klmr@indentblock{\textwidth}{%
-            \setlength\parindent{-1ex}
-            \setlength\parskip{0.5ex}
-            \small##1\unskip. “##2.” \textit{##3}, ##4, ##5.}}
-    \BODY
-    \endgroup}
-
 \NewEnviron{sidebar}{%
     \renewcommand\details[1]{\klmr@details{\marginparwidth}{##1}}
     \reversemarginpar%
@@ -120,6 +110,16 @@
         {\small\vspace{\baselineskip}}%
         {\vspace{0.5\baselineskip}}%
         \BODY}}
+
+\RenewEnviron{bibliography}{%
+    \begingroup
+    \renewcommand*\bibitem[5]{%
+        \klmr@indentblock{\textwidth}{%
+            \setlength\parindent{-1ex}
+            \setlength\parskip{0.5ex}
+            \small##1\unskip. “##2.” \textit{##3}, ##4, ##5.}}
+    \BODY
+    \endgroup}
 
 \let\cv@enditemize\enditemize
 \renewcommand*\enditemize{\cv@enditemize\vspace{0pt plus 1\baselineskip}}
