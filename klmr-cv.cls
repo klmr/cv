@@ -8,7 +8,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{array}
 \RequirePackage{fontspec}
-\RequirePackage{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{geometry}
 \RequirePackage{polyglossia}
 \RequirePackage[explicit]{titlesec}
