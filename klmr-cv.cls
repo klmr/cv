@@ -1,9 +1,8 @@
 \ProvidesClass{klmr-cv}
 \NeedsTeXFormat{LaTeX2e}
 
-\LoadClass[fontsize=9pt, paper=a4]{scrartcl}
+\LoadClass[fontsize=9pt, a4paper]{scrartcl}
 
-\RequirePackage{fixltx2e}
 \RequirePackage{xltxtra}
 \RequirePackage{etoolbox}
 \RequirePackage{array}
