@@ -20,6 +20,9 @@
 
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
+\newcommand*\last[1]{\textbf{#1}}
+
+\definecolor{highlight}{HTML}{506984}
 
 \renewcommand*\maketitle{%
     \clearpage%
@@ -27,7 +30,7 @@
     \hspace{\dimexpr-\marginparwidth-\marginparsep}
     \begin{minipage}[][3cm][c]{\dimexpr\textwidth+\marginparwidth+\marginparsep}
         \centering%
-        {\Huge\textsf\@author}%
+        {\Huge\sffamily\color{highlight}\@author}%
         \\[0.5\baselineskip]%
         {%
             \small
@@ -46,7 +49,7 @@
         \sffamily%
         \Large%
         \addfontfeature{LetterSpace=10}%
-        \color[HTML]{506984}
+        \color{highlight}
         \MakeTextUppercase{#1}%
     }}% Before-code
 
@@ -153,9 +156,9 @@ marginparsep=0.75cm}
 
 \setsansfont[
     UprightFont={* UltraLight},
-    BoldFont={* Light},
+    BoldFont={*},
     ItalicFont={* UltraLight Italic},
-    BoldItalicFont={* Light Italic},
+    BoldItalicFont={* Italic},
 ]{Helvetica Neue}
 
 \let\old@amp\&
