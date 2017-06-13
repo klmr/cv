@@ -71,7 +71,7 @@
 
 \renewcommand*\subsubsection[1]{\textit{#1}}
 
-\newcommand*\myself[1]{\textit{#1}}
+\newcommand*\myself[1]{\textcolor{black}{\textit{#1}}}
 
 \renewcommand*\date[1]{%
     % The test is necessary to prevent formatting errors in section titles,
@@ -123,9 +123,10 @@
     \renewcommand*\bibitem[5]{%
         \klmr@indentblock{\textwidth}{%
             \setlength\parindent{-1ex}
-            \setlength\parskip{0.5ex}
-            \small##1\unskip. “##2.” \textit{##3} (##4)\ifstrempty{##5}{}{,
+            \small\textcolor[HTML]{666666}{##1\unskip}. “##2.”
+            \textcolor[HTML]{666666}{\textit{##3} (##4)\ifstrempty{##5}{}{,
                 ##5}.}}
+            \vspace{0.75ex}}
     \BODY
     \endgroup}
 
