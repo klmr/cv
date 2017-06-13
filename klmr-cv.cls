@@ -124,7 +124,8 @@
         \klmr@indentblock{\textwidth}{%
             \setlength\parindent{-1ex}
             \setlength\parskip{0.5ex}
-            \small##1\unskip. “##2.” \textit{##3}, ##4, ##5.}}
+            \small##1\unskip. “##2.” \textit{##3} (##4)\ifstrempty{##5}{}{,
+                ##5}.}}
     \BODY
     \endgroup}
 
