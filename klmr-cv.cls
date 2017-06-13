@@ -46,6 +46,7 @@
         \sffamily%
         \Large%
         \addfontfeature{LetterSpace=10}%
+        \color[HTML]{506984}
         \MakeTextUppercase{#1}%
     }}% Before-code
 
