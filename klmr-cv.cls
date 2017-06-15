@@ -127,8 +127,9 @@
         \klmr@indentblock{\textwidth}{%
             \setlength\parindent{-1ex}
             \small\textcolor[HTML]{666666}{##1\unskip}. “##2.”
-            \textcolor[HTML]{666666}{\textit{##3} (##4)\ifstrempty{##5}{}{,
-                ##5}.}}
+            \textcolor[HTML]{666666}{%
+                \ifstrempty{##3}{}{\textit{##3} }(##4)%
+                \ifstrempty{##5}{}{, ##5}.}}
             \vspace{0.75ex}}
     \BODY
     \endgroup}
