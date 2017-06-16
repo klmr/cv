@@ -20,15 +20,18 @@
 \newcommand*\email[1]{\gdef\@email{#1}}
 \newcommand*\website[1]{\gdef\@website{#1}}
 \newcommand*\last[1]{\textbf{#1}}
+\newcommand*\address[1]{\gdef\@address{#1}}
 
 \definecolor{highlight}{HTML}{506984}
 
 \renewcommand*\maketitle{%
     \clearpage%
     \pagestyle{empty}%
+    \noindent%
     \hspace{\dimexpr-\marginparwidth-\marginparsep}
-    \begin{minipage}[][3cm][c]{\dimexpr\textwidth+\marginparwidth+\marginparsep}
-        \centering%
+    \begingroup%
+    \setlength\textwidth{\dimexpr\textwidth+\marginparwidth+\marginparsep}%
+    \begin{minipage}[b][3cm][c]{0.5\textwidth}
         {\Huge\sffamily\color{highlight}\@author}%
         \\[0.5\baselineskip]%
         {%
@@ -37,7 +40,13 @@
             \href{mailto:\@email}{\@email}%
         }%
     \end{minipage}%
-    \global\let\maketitle\relax%
+    \begin{minipage}[b][3cm][c]{0.5\textwidth}
+        \begin{flushright}
+            \@address
+        \end{flushright}
+    \end{minipage}%
+    \endgroup
+    \global\let\maketitle\relax
 }
 
 \titleformat\section
@@ -112,13 +121,11 @@
     \renewcommand\details[1]{\klmr@details{\marginparwidth}{##1}}
     \reversemarginpar%
     \marginpar{%
-        % Vertical spacing before sidebar equivalent to height title;
-        % Although I don’t know why the additional space at the end is  needed
-        % here: everything is slightly off, so I’m adding it to compensate.
-        {\Huge\sffamily\vspace{\baselineskip}}%
-        \vspace{1.5\baselineskip}%
-        {\small\vspace{\baselineskip}}%
-        {\vspace{0.5\baselineskip}}%
+        % Vertical spacing before sidebar equivalent to section title height;
+        % but everything is slightly off, so we’ll compensate slightly as
+        % needed.
+        {\sffamily\Large\vspace{\baselineskip}}%
+        \vspace{0.02cm}%
         \BODY}}
 
 \RenewEnviron{bibliography}{%
