@@ -6,7 +6,7 @@ Compile using
 make
 ```
 
-![](thumbnail.png)
+[![](thumbnail.png)](klmr-cv.pdf)
 
 ## License
 
