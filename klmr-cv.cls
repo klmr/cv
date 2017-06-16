@@ -104,16 +104,11 @@
         \unskip%
         \def\item{\unskip~· }}}{\unskip}
 
-\newcommand\klmr@indentblock[2]{%
-    \par%
-    \noindent%
-    \hfill%
-    \begin{minipage}[t]{\dimexpr#1-1ex}
-        \par
-        #2%
-    \end{minipage}}
+\newcommand\klmr@parblock[2]{\noindent\begin{minipage}[t]{#1}#2\end{minipage}}
 
-\newcommand\klmr@details[2]{\klmr@indentblock{#1}{\leavevmode\color[HTML]{666666}{\small#2}}}
+\newcommand\klmr@details[2]{%
+    \par\noindent\hfill%
+    \klmr@parblock{\dimexpr#1-1ex}{\leavevmode\color[HTML]{666666}{\small#2}}}
 
 \newcommand\details[1]{\klmr@details{\textwidth}{#1}}
 
@@ -131,8 +126,8 @@
 \RenewEnviron{bibliography}{%
     \begingroup
     \renewcommand*\bibitem[5]{%
-        \klmr@indentblock{\textwidth}{%
-            \setlength\parindent{-1ex}
+        \klmr@parblock{\textwidth}{%
+            \setlength\hangindent{1ex}
             \small\textcolor[HTML]{666666}{##1\unskip}. “##2.”
             \textcolor[HTML]{666666}{%
                 \ifstrempty{##3}{}{\textit{##3} }(##4)%
