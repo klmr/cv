@@ -104,11 +104,13 @@
         \unskip%
         \def\item{\unskip~· }}}{\unskip}
 
-\newcommand\klmr@parblock[2]{\noindent\begin{minipage}[t]{#1}#2\end{minipage}}
+\newcommand\klmr@parblock[2]{%
+    \noindent\begin{minipage}[t]{#1}#2\end{minipage}\par}
 
 \newcommand\klmr@details[2]{%
     \par\noindent\hfill%
-    \klmr@parblock{\dimexpr#1-1ex}{\leavevmode\color[HTML]{666666}{\small#2}}}
+    \setlength\fboxsep{0ex}
+    {\small\klmr@parblock{\dimexpr#1-1ex}{\leavevmode\color[HTML]{666666}{#2}}}}
 
 \newcommand\details[1]{\klmr@details{\textwidth}{#1}}
 
