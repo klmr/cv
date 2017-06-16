@@ -6,6 +6,10 @@ includes := $(shell ls *.{tex,cls})
 
 all: ${target} thumbnail
 
+compile: all
+	git add ${target}.pdf thumbnail.png
+	git commit -m 'Recompile document, update thumbnail'
+
 .PHONY: ${target}
 ${target}: ${target}.pdf
 
