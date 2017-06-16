@@ -102,7 +102,7 @@
 \newenvironment{minilist}{%
     \def\item{%
         \unskip%
-        \def\item{\unskip~· }}}{}
+        \def\item{\unskip~· }}}{\unskip}
 
 \newcommand\klmr@indentblock[2]{%
     \par%
