@@ -168,6 +168,13 @@ marginparsep=0.75cm}
 \let\old@amp\&
 \renewcommand*\&{{\fontspec{Yanone Kaffeesatz Thin}\old@amp}}
 
+\let\old@sffamily\sffamily
+\renewcommand\sffamily{%
+    \begingroup
+    \renewcommand\&{{\fontspec{Yanone Kaffeesatz Light}\old@amp}}
+    \old@sffamily%
+    \endgroup}
+
 \setlist{nosep, leftmargin=*}
 
 % vim:ft=tex
